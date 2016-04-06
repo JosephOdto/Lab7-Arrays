@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Lab7_arrays {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner (System.in);
+		String name;
+		int stringLength,i,countUpper=0, countLower=0,notLetterCount=0,notLetter;
+
+		System.out.println("Enter the phrase: ");
+		name = input.nextLine();
+
+		stringLength = name.length();
+
+		for(i=0;i<name.length();i++){
+			if(Character.isUpperCase(name.charAt(i)))
+				countUpper++;	
+
+			if(Character.isLowerCase(name.charAt(i)))
+				countLower++;
+
+			if (Character.isLetter(name.charAt(i)))
+				notLetterCount++;
+		}
+		notLetter = name.length() - notLetterCount;
+
+		System.out.println("The total number of letters is "+ stringLength);
+		System.out.println("The number of upper case letters is "+ countUpper);
+		System.out.println("The number of lower case letters is "+ countLower);
+		System.out.println("The number of other letters is "+ notLetter);
+
+	}
+
+}
